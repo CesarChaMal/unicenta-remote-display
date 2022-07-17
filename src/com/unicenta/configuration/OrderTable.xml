@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet author="uniCenta" id="Create RemoteDisplay Orders Table">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="orders"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="orders">            
+            <column name="id" type="varchar(50)" >
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="orderid" type="varchar(50)" />
+            <column name="qty" type="int" defaultValueNumeric="1"/>  
+            <column name="details" type="varchar(255)" />
+            <column name="attributes" type="varchar(255)" />
+            <column name="notes" type="varchar(255)" />
+            <column name="ticketid" type="varchar(50)" />
+            <column name="ordertime" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP"/>         
+            <column name="displayid" type="int" defaultValueNumeric="1"/> 
+            <column name="auxiliary" type="int" defaultValueNumeric="0"/>
+            <column name="completetime" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP"/>                            
+        </createTable>
+    </changeSet>
+ 
+</databaseChangeLog>

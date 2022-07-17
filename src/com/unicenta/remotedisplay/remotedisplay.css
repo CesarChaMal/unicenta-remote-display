@@ -1,0 +1,44 @@
+
+/*******************************************************************************
+ *                                                                             *
+ * "Off-Black" contrast theme.                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+.root {
+    -fx-base: #383838;
+    -fx-background: -fx-base;
+    -fx-control-inner-background: -fx-base;
+    -fx-control-inner-background-alt: -fx-base;
+    -fx-faint-focus-color: -fx-accent;
+    -fx-hover-base: white;
+    -fx-pressed-base: derive(-fx-hover-base, -18%);
+    -fx-box-border: -fx-hover-base;
+    -fx-text-box-border: -fx-hover-base;
+    -fx-shadow-highlight-color: -fx-base;
+    -fx-outer-border: -fx-hover-base;
+    -fx-light-text-color: -fx-hover-base;
+    -fx-mark-color: ladder(
+        -fx-color,
+        yellow 60%,
+        derive(-fx-color,-63%) 31%
+    );
+    -fx-selection-bar-non-focused: derive(-fx-hover-base, -80%);
+    -fx-contrast-color: white;
+}
+
+
+.list-cell 
+{
+  -fx-font: 10pt "Arial";
+  -fx-font-weight: bold;
+}
+
+.clock{
+  -fx-font: 16pt "Gill Sans MT";
+  -fx-font-weight: bold;    
+}
+
+.split-pane > .split-pane-divider {  
+    -fx-padding: 0 0.25em 0 0.25em;  
+}

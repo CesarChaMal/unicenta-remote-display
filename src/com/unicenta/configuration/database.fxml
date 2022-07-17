@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unicenta.configuration.DatabaseController">
+    <children>
+        <Pane layoutX="32.0" layoutY="11.0" prefHeight="568.0" prefWidth="600.0" stylesheets="@database.css">
+            <children>
+                <Button fx:id="exit" cancelButton="true" defaultButton="true" layoutX="430.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleExitClick" prefHeight="25.0" prefWidth="77.0" text="Exit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Exit form and discard current settings" textAlignment="CENTER" />
+               </tooltip>
+            </Button>
+                <Button fx:id="save" layoutX="325.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleSaveClick" prefHeight="25.0" prefWidth="85.0" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Save current form settings" />
+               </tooltip>
+            </Button>
+                <Label fx:id="database" layoutX="20.0" layoutY="10.0" prefHeight="30.0" text="Database">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+                <ComboBox fx:id="jcboDBDriver" layoutX="180.0" layoutY="10.0" prefHeight="30.0" prefWidth="330.0" promptText="Select your Database server type">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="MySQL" />
+                            <String fx:value="PostgreSQL" />
+                        </FXCollections>            
+                    </items>
+                    <value>
+                        <String fx:value="MySQL" /> 
+                    </value>
+               <tooltip>
+                  <Tooltip text="Select your Database server" textAlignment="CENTER" />
+               </tooltip>
+                </ComboBox>
+                <Label fx:id="driverclass" layoutX="20.0" layoutY="49.0" prefHeight="30.0" text="Driver Class">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+                <TextField fx:id="jtxtDbDriver" layoutX="180.0" layoutY="49.0" prefHeight="30.0" prefWidth="330.0" promptText="com.mysql.jdbc.Driver">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Default is com.mysql.jdbc.Driver" textAlignment="CENTER" />
+               </tooltip>
+            </TextField>
+            <Label layoutX="20.0" layoutY="88.0" prefHeight="30.0" text="Database Dialect">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="jtxtDialect" layoutX="180.0" layoutY="88.0" prefHeight="30.0" prefWidth="330.0" promptText="org.hibernate.dialect.MySQLInnoDBDialect">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="uniCenta Remote Display uses Hibernate and suggest this is left org.hibernate.dialect.MySQLDialect" textAlignment="CENTER" wrapText="true" />
+               </tooltip>
+            </TextField>
+                <Label fx:id="url" layoutX="20.0" layoutY="127.0" prefHeight="30.0" text="Database URL">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+                <TextField fx:id="jtxtDbURL" layoutX="180.0" layoutY="127.0" prefHeight="30.0" prefWidth="330.0" promptText="jdbc:mysql://localhost:3306/unicentaopos">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="The type and path to your database server" />
+               </tooltip>
+            </TextField>
+                <Label fx:id="user" layoutX="20.0" layoutY="166.0" prefHeight="30.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>     
+                <TextField fx:id="jtxtDbUser" layoutX="180.0" layoutY="166.0" prefHeight="30.0" promptText="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="The database Username" />
+               </tooltip>
+            </TextField>
+                <Label fx:id="password" layoutX="20.0" layoutY="205.0" prefHeight="30.0" text="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="jtxtDbPassword" layoutX="180.0" layoutY="205.0" prefHeight="30.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="The database Username Password" textAlignment="CENTER" />
+               </tooltip>
+            </PasswordField>
+            <Label layoutX="20.0" layoutY="244.0" prefHeight="30.0" text="Display Number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="displayNumber" editable="true" layoutX="180.0" layoutY="244.0" prefHeight="30.0" prefWidth="60.0">
+               <tooltip>
+                  <Tooltip text="Set the display screen for this form's settings" textAlignment="CENTER" />
+               </tooltip>
+            </Spinner>
+            <CheckBox fx:id="jSecondscr" layoutX="286.0" layoutY="244.0" mnemonicParsing="false" prefHeight="30.0" text="Use second Display" textAlignment="RIGHT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Show Remote Display if secondary display is available" textAlignment="CENTER" />
+               </tooltip>
+            </CheckBox>
+            <Label layoutX="20.0" layoutY="284.0" prefHeight="30.0" text="Display size" textAlignment="RIGHT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="284.0" prefHeight="30.0" text="Width">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="jtxtWidth" layoutX="246.0" layoutY="284.0" prefHeight="30.0" prefWidth="53.0" text="1024">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Width of your display in pixels" textAlignment="CENTER" />
+               </tooltip>
+            </TextField>
+            <Label layoutX="310.0" layoutY="284.0" prefHeight="30.0" text="Height">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="jtxtHeight" layoutX="376.0" layoutY="284.0" prefHeight="30.0" prefWidth="53.0" text="768">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Height of your display in pixels" />
+               </tooltip>
+            </TextField>
+            <Label layoutX="20.0" layoutY="324.0" prefHeight="30.0" prefWidth="130.0" text="Clock format">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="jtxtClockFormat" layoutX="180.0" layoutY="324.0" prefHeight="30.0" prefWidth="122.0" promptText="HH:mm:s">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Time format for remote display clock" />
+               </tooltip>
+            </TextField>
+            <Label layoutX="20.0" layoutY="397.0" text="Limits">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="180.0" layoutY="362.0" prefHeight="30.0" prefWidth="60.0" text="Waiting">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="limitWait" editable="true" layoutX="180.0" layoutY="392.0" prefHeight="30.0" prefWidth="60.0">
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Set - in minutes - remote display visual colour lower limit" textAlignment="CENTER" />
+               </tooltip>
+            </Spinner>
+            <Label alignment="CENTER" layoutX="259.0" layoutY="362.0" prefHeight="30.0" prefWidth="60.0" text="Overdue">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="limitOverdue" editable="true" layoutX="259.0" layoutY="392.0" prefHeight="30.0" prefWidth="60.0">
+               <tooltip>
+                  <Tooltip text="Set - in minutes - remote display visual colour intermediate limit" />
+               </tooltip>
+            </Spinner>
+            <Label alignment="CENTER" layoutX="337.0" layoutY="362.0" prefHeight="30.0" prefWidth="60.0" text="Urgent">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="limitUrgent" editable="true" layoutX="337.0" layoutY="392.0" prefHeight="30.0" prefWidth="60.0">
+               <tooltip>
+                  <Tooltip text="Set - in minutes - remote display visual colour upper limit alert" />
+               </tooltip>
+            </Spinner>
+            <Label layoutX="20.0" layoutY="435.0" prefHeight="30.0" text="Items in history">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="historyCount" editable="true" layoutX="180.0" layoutY="431.0" prefHeight="30.0" prefWidth="60.0" />
+            <Label layoutX="20.0" layoutY="474.0" prefHeight="30.0" text="Exit Action">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="jchcExitAction" layoutX="180.0" layoutY="474.0" prefHeight="30.0">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Exit" />
+                      <String fx:value="Prompt" />
+                      <String fx:value="Auto-Close ALL Orders" />
+                      <String fx:value="Auto-Close THIS station Orders" />
+                  </FXCollections>            
+              </items>
+              <value>
+                  <String fx:value="Prompt" /> 
+              </value>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Choose action options on remote display close" textAlignment="CENTER" />
+               </tooltip>
+            </ChoiceBox>
+            <Button fx:id="create" layoutX="367.0" layoutY="181.0" mnemonicParsing="false" onAction="#docreateTable" prefHeight="30.0" prefWidth="144.0" text="Test + Create">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip contentDisplay="CENTER" text="Save current form settings" />
+               </tooltip>
+            </Button>            
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

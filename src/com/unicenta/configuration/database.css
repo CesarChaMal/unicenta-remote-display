@@ -1,0 +1,15 @@
+ 
+#fileopen{
+    -fx-graphic: url("/com/unicenta/images/folder.png");
+} 
+
+#dbtest{
+   -fx-graphic: url("/com/unicenta/images/db_status.png"); 
+   -fx-graphic-text-gap : 5;
+}
+
+#comboBox .list-cell {
+    -fx-font-family: system;
+    -fx-font-size: 14px;
+    -fx-text-fill: #4C4C4C; 
+}
