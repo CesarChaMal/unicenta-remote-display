@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="uniCenta_Remote_Display" default="default" basedir=".">
-    <description>Builds, tests, and runs the project uniCenta_Remote_Display.</description>
+<project name="uniCenta-remote-display" default="default" basedir=".">
+    <description>Builds, tests, and runs the project uniCenta-remote-display.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

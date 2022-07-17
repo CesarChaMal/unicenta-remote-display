@@ -150,8 +150,8 @@ public class DatabaseController implements Initializable {
                             new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 9, 1));
                     jtxtDbDriver.setText("com.mysql.jdbc.Driver");
                     jtxtDbURL.setText("jdbc:mysql://localhost:3306/unicentaopos");
-                    jtxtDbUser.setText("");
-                    jtxtDbPassword.setText("");
+                    jtxtDbUser.setText("root");
+                    jtxtDbPassword.setText("mysql");
                     jtxtDialect.setText("org.hibernate.dialect.MySQLDialect");
                     break;
                 case "PostgreSQL":

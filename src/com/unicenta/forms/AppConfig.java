@@ -112,8 +112,8 @@ public final class AppConfig {
         m_propsconfig.setProperty("db.engine", "MySql");
         m_propsconfig.setProperty("db.driver", "com.mysql.jdbc.Driver");
         m_propsconfig.setProperty("db.URL", "jdbc:mysql://localhost:3306/unicentaopos");
-        m_propsconfig.setProperty("db.user", "");
-        m_propsconfig.setProperty("db.password", "");
+        m_propsconfig.setProperty("db.user", "root");
+        m_propsconfig.setProperty("db.password", "mysql");
         m_propsconfig.setProperty("screen.displaynumber", "1");
         m_propsconfig.setProperty("db.dialect", "org.hibernate.dialect.MySQLDialect");
         m_propsconfig.setProperty("limit.wait", "5");        
